@@ -15,4 +15,6 @@ Testing
 
     $ npm test
 or
+    
     $ grunt watch
+    
