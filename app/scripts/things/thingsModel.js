@@ -6,6 +6,17 @@ angular.module('angularListApp')
         return {
             getItems: function () {
                 return _items;
+            },
+
+            add: function (item) {
+                _items.push(item);
+            },
+
+            remove: function (item) {
+                var index = _items.indexOf(item);
+                if (index > -1) {
+                    _items.splice(index, 1);
+                }
             }
         };
     });
