@@ -8,7 +8,7 @@
  * Controller of the angularListApp
  */
 angular.module('angularListApp')
-  .controller('MainCtrl', function ($scope) {
+  .controller('ThingsCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
