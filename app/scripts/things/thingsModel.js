@@ -17,6 +17,9 @@ angular.module('angularListApp')
                 if (index > -1) {
                     _items.splice(index, 1);
                 }
+            },
+            count: function () {
+                return _items.length;
             }
         };
     });

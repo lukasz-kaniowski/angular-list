@@ -23,6 +23,13 @@ describe('Service: ThingsModel', function () {
         expect(thingsModel.getItems()[0]).toBe('Item1');
     });
 
+    it('should count items ', function () {
+        thingsModel.add('Item1');
+        thingsModel.add('Item2');
+
+        expect(thingsModel.count()).toBe(2);
+    });
+
     it('should remove item from list', function () {
         thingsModel.add('Item1');
         thingsModel.add('Item2');
