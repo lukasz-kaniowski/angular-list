@@ -13,7 +13,10 @@ describe('Controller: ThingsCtrl', function () {
     beforeEach(inject(function ($controller, $rootScope) {
         scope = $rootScope.$new();
 
-        mockThingsModel = { sample: 'mockedObject'};
+        mockThingsModel = {
+            sample: 'mockedObject',
+            add: function(){}
+        };
 
         ThingsCtrl = $controller('ThingsCtrl', {
             $scope: scope,
@@ -23,5 +26,15 @@ describe('Controller: ThingsCtrl', function () {
 
     it('should attach thingsModel to the scope', function () {
         expect(scope.thingsModel).toBe(mockThingsModel);
+    });
+
+    it('should add new item', function () {
+        scope.newItem = 'New Item';
+        spyOn(mockThingsModel, 'add');
+
+        scope.add();
+
+        expect(mockThingsModel.add).toHaveBeenCalledWith('New Item');
+        expect(scope.newItem).toBe('');
     });
 });

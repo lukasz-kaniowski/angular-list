@@ -1,0 +1,14 @@
+<div class="row marketing">
+    <h4>List of things</h4>
+    <ul>
+        <li ng-repeat="item in thingsModel.getItems() track by $index">{{item}}
+            <button ng-click="thingsModel.remove(item)" class="btn-sm btn-danger btn">remove</button>
+        </li>
+    </ul>
+    <form ng-submit="add()">
+
+        <input type="text" ng-model="newItem">
+        <button class="btn btn-success">Add</button>
+
+    </form>
+</div>
